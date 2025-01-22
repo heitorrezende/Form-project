@@ -1,4 +1,6 @@
-export const server = {
+import { Server } from "../src/types";
+
+export const server: Server = {
   Company1: {
     FormFields: [
       {
@@ -7,7 +9,6 @@ export const server = {
         Validation: { required: true },
       },
       { Label: "Email", Type: "email", Validation: { required: true } },
-
       {
         Label: "No de Empregado",
         Type: "text",
