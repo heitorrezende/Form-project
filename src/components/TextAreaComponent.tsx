@@ -1,13 +1,8 @@
 import React from 'react';
-import { ControllerRenderProps } from 'react-hook-form';
-import TextField from '@mui/material/TextField';
+import { TextField } from '@mui/material';
+import { ITextAreaComponentProps } from '../types';
 
-interface TextAreaComponentProps {
-    field: ControllerRenderProps;
-    label: string;
-}
-
-const TextAreaComponent: React.FC<TextAreaComponentProps> = ({ field, label }) => (
+const TextAreaComponent: React.FC<ITextAreaComponentProps> = ({ field, label, error, helperText }) => (
     <TextField
         {...field}
         label={label}
@@ -16,6 +11,8 @@ const TextAreaComponent: React.FC<TextAreaComponentProps> = ({ field, label }) =
         variant="outlined"
         margin="normal"
         fullWidth
+        error={error}
+        helperText={helperText}
     />
 );
 

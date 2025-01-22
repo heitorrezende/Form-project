@@ -1,6 +1,6 @@
-import { Server } from "../src/types";
+import { IServer } from "../src/types";
 
-export const server: Server = {
+export const server: IServer = {
   Company1: {
     FormFields: [
       {

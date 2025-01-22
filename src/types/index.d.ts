@@ -1,21 +1,29 @@
-export interface MultiSelectComponentProps {
+import { ControllerRenderProps } from "react-hook-form";
+
+export interface IMultiSelectComponentProps {
   field: ControllerRenderProps;
   label: string;
   options: string[];
+  error?: boolean;
+  helperText?: string;
 }
 
-export interface TextAreaComponentProps {
+export interface ITextAreaComponentProps {
   field: ControllerRenderProps;
   label: string;
+  error?: boolean;
+  helperText?: string;
 }
 
-export interface TextFieldComponentProps {
+export interface ITextFieldComponentProps {
   field: ControllerRenderProps;
   label: string;
   type: string;
+  error?: boolean;
+  helperText?: string;
 }
 
-export interface FormField {
+export interface IFormField {
   Label: string;
   Type: string;
   Validation?: {
@@ -25,12 +33,17 @@ export interface FormField {
   Options?: string[];
 }
 
-export interface Server {
+export interface IServer {
   [key: string]: {
-    FormFields: FormField[];
+    FormFields: IFormField[];
   };
 }
 
-export interface CompanyFormProps {
-  company: keyof Server;
+export interface ICompanyFormProps {
+  company: keyof IServer;
+}
+
+export interface ICompanySelectionProps {
+  selectedCompany: string;
+  onSelectCompany: (company: string) => void;
 }
